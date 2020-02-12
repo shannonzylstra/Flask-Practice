@@ -11,7 +11,7 @@ def home():
 
 @app.route('/greeting')
 def greeting():
-    return 'Greetings!'
+    return render_template('index.html', name='Rachel Maddow')
 
 @app.route('/pie')
 def pie():
