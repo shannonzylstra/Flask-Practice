@@ -1,5 +1,5 @@
 # Import needed packages
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 
 # Declare app instance
 app = Flask(__name__)
@@ -15,4 +15,10 @@ def greeting():
 
 @app.route('/pie')
 def pie():
-    return 'Pie JSON object?'
+    ingredients = [
+        'strawberries',
+        'rhubarb',
+        'piecrust'
+    ]
+    return jsonify({'pie ingredient': ingredients[1]})
+    
